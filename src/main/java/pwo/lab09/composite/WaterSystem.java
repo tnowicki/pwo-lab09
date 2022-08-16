@@ -5,7 +5,8 @@ import java.util.ArrayList;
 
 public class WaterSystem implements WaterSystemInterface {
     
-    private final List<WaterSystemInterface> elements = new ArrayList<>();
+    protected final List<WaterSystemInterface>
+            elements = new ArrayList<>();
         
     public final void addComponent(WaterSystem element){
         elements.add(element);
@@ -13,7 +14,7 @@ public class WaterSystem implements WaterSystemInterface {
     
     public void fill(){
         elements.forEach(element -> element.fill());
-        System.out.println("System wodny napełniony");
+        //System.out.println("System wodny napełniony");
     }
     
     public void afterFill(){
@@ -22,7 +23,6 @@ public class WaterSystem implements WaterSystemInterface {
    
     public void drain() {
         elements.forEach(element -> element.drain());
-        System.out.println("System wodny opróżniony");
     }
     
     public void afterDrain() { 
